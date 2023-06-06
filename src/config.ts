@@ -21,7 +21,6 @@ export enum Feed {
     REDDIT_NFL_HOT = 'reddit_nfl-hot',
     REDDIT_SOCCER_HOT = 'reddit_soccer-hot',
     REDDIT_TENNIS_HOT = 'reddit_tennis-hot',
-    SULTAN_KNISH = 'sultan_knish-general',
     VOLOKH_CONSPIRACY = 'volokh-general',
     VOX = 'vox-general',
 }
@@ -49,7 +48,6 @@ export const FeedName: Record<Feed, string> = {
     [Feed.REDDIT_NFL_HOT]: 'r/NFL',
     [Feed.REDDIT_SOCCER_HOT]: 'r/soccer',
     [Feed.REDDIT_TENNIS_HOT]: 'r/tennis',
-    [Feed.SULTAN_KNISH]: 'Sultan Knish',
     [Feed.VOLOKH_CONSPIRACY]: 'Volokh Conspiracy',
     [Feed.VOX]: 'Vox',
 };
@@ -85,8 +83,6 @@ export const FeedURL: Record<Feed, string> = {
         'https://www.reddit.com/r/soccer/hot.json?limit=10',
     [Feed.REDDIT_TENNIS_HOT]:
         'https://www.reddit.com/r/tennis/hot.json?limit=5',
-    [Feed.SULTAN_KNISH]:
-        'http://feeds.feedburner.com/FromNyToIsraelSultanRevealsTheStoriesBehindTheNews?format=xml',
     [Feed.VOLOKH_CONSPIRACY]: 'https://reason.com/volokh/feed/',
     [Feed.VOX]: 'https://www.vox.com/rss/index.xml',
 };
