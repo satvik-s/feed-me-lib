@@ -18,7 +18,27 @@ export enum Feed {
     REDDIT_TENNIS = 'reddit-tennis',
 }
 
-export const FEED_URLS: Record<Feed, string> = {
+export const FeedName: Record<Feed, string> = {
+    [Feed.AEON]: 'aeon',
+    [Feed.BBC_TOP_STORIES]: 'BBC',
+    [Feed.BBC_WORLD]: 'BBC',
+    [Feed.CNN_TOP_STORIES]: 'CNN',
+    [Feed.CNN_WORLD]: 'CNN',
+    [Feed.EL_PAIS_TOP_STORIES]: 'El País',
+    [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
+    [Feed.GUARDIAN_WORLD]: 'the Guardian',
+    [Feed.NEW_YORK_TIMES_TOP_STORIES]: 'the New York Times',
+    [Feed.NEW_YORK_TIMES_WORLD]: 'the New York Times',
+    [Feed.NEW_YORKER_TOP_STORIES]: 'the New Yorker',
+    [Feed.POLITICO_TOP_STORIES]: 'Politico',
+    [Feed.REDDIT_FORMULA1]: 'r/Formula1',
+    [Feed.REDDIT_NBA]: 'r/NBA',
+    [Feed.REDDIT_NFL]: 'r/NFL',
+    [Feed.REDDIT_SOCCER]: 'r/soccer',
+    [Feed.REDDIT_TENNIS]: 'r/tennis',
+};
+
+export const FeedURL: Record<Feed, string> = {
     [Feed.AEON]: 'https://aeon.co/feed.rss',
     [Feed.BBC_TOP_STORIES]: 'https://feeds.bbci.co.uk/news/rss.xml',
     [Feed.BBC_WORLD]: 'https://feeds.bbci.co.uk/news/world/rss.xml',
