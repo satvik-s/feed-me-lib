@@ -1,6 +1,6 @@
 {
-  "name": "feed-me-lib",
-  "version": "1.0.0",
+  "name": "@satvik-s/feed-me-lib",
+  "version": "0.0.1",
   "description": "feed me project config",
   "main": "index.js",
   "scripts": {
