@@ -13,7 +13,7 @@ export enum Feed {
     GUARDIAN_WORLD = 'guardian-world',
     LONGREADS = 'longreads-general',
     NATIONAL_REVIEW_THE_CORNER = 'national_review-the_corner',
-    NAUTILUS = 'naulitus-general',
+    NAUTILUS = 'nautilus-general',
     NEW_YORK_TIMES_TOP_STORIES = 'new_york_times-top_stories',
     NEW_YORK_TIMES_WORLD = 'new_york_times-world',
     NEW_YORKER_TOP_STORIES = 'new_yorker-top_stories',
