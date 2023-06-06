@@ -51,6 +51,8 @@ jobs:
       - run: rm -rf node_modules
       - run: npm ci --omit dev --ignore-scripts
       - run: cp -r node_modules/ dist/
-      - run: npm publish --access public --ignore-scripts
+      - run: rm -rf node_modules
+      - run: npm ci
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
