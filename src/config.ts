@@ -38,7 +38,7 @@ export const FeedName: Record<Feed, string> = {
     [Feed.FIVE_THIRTY_EIGHT]: 'FiveThirtyEight',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
     [Feed.GUARDIAN_WORLD]: 'the Guardian',
-    [Feed.NATIONAL_REVIEW_THE_CORNER]: 'The Corner | National Review',
+    [Feed.NATIONAL_REVIEW_THE_CORNER]: 'National Review',
     [Feed.NEW_YORK_TIMES_TOP_STORIES]: 'the New York Times',
     [Feed.NEW_YORK_TIMES_WORLD]: 'the New York Times',
     [Feed.NEW_YORKER_TOP_STORIES]: 'the New Yorker',
