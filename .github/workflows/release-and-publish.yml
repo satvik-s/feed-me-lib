@@ -1,0 +1,56 @@
+name: Release and Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+
+  create-gh-release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - name: Get release tag
+        id: get-release-tag
+        shell: bash
+        run: echo "release-tag=v$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+      - name: Create GitHub release
+        shell: bash
+        run: gh release create $RELEASE_TAG
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          RELEASE_TAG: ${{ steps.get-release-tag.outputs.release-tag }}
+
+  publish-gpr:
+    needs: create-gh-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com/
+          scope: '@satvik-s'
+      - run: npm ci
+      - run: npm run build
+      - run: rm -rf node_modules
+      - run: npm ci --omit dev --ignore-scripts
+      - run: cp -r node_modules/ dist/
+      - run: npm publish --access public --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
