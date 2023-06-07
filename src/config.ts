@@ -9,6 +9,7 @@ export enum Feed {
     DAMN_INTERESTING = 'damn_interesting-general',
     EL_PAIS_TOP_STORIES = 'el_pais-top_stories',
     FIVE_THIRTY_EIGHT = 'five_thirty_eight-general',
+    GUARDIAN_THE_LONG_READ = 'guardian-the_long_read',
     GUARDIAN_TOP_STORIES = 'guardian-top_stories',
     GUARDIAN_WORLD = 'guardian-world',
     LONGREADS = 'longreads-general',
@@ -39,6 +40,7 @@ export const FeedName: Record<Feed, string> = {
     [Feed.DAMN_INTERESTING]: 'Damn Interesting',
     [Feed.EL_PAIS_TOP_STORIES]: 'El País',
     [Feed.FIVE_THIRTY_EIGHT]: 'FiveThirtyEight',
+    [Feed.GUARDIAN_THE_LONG_READ]: 'the Guardian',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
     [Feed.GUARDIAN_WORLD]: 'the Guardian',
     [Feed.LONGREADS]: 'Longreads',
@@ -70,6 +72,8 @@ export const FeedURL: Record<Feed, string> = {
         'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada',
     [Feed.FIVE_THIRTY_EIGHT]: 'https://fivethirtyeight.com/features/feed/',
     [Feed.DAMN_INTERESTING]: 'https://feeds.feedburner.com/damninteresting/all',
+    [Feed.GUARDIAN_THE_LONG_READ]:
+        'https://www.theguardian.com/news/series/the-long-read/rss',
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
