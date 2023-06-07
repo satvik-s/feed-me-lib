@@ -29,6 +29,7 @@ jobs:
           git config user.name 'Satvik'
           git config user.email 'satvik@users.noreply.github.com'
           npm i
+          touch test.txt
           git add -A
           git commit -m "re-install deps"
       - name: Create Pull Request
