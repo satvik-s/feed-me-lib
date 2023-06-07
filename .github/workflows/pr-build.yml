@@ -34,6 +34,6 @@ jobs:
           git add -A
           git commit -m "re-install deps"
           git push -u origin HEAD
-          gh pr create --title "version bump" --body "N/A" --base main --draft
+          gh pr create --title "version bump" --body "N/A" --base main
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_WRITE_PAT }}
