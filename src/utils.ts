@@ -1,4 +1,4 @@
-import { Feed } from './config';
+import { Feed, feedPath } from './config';
 
 export function feedRequiresLongerPersistence(feed: Feed): boolean {
     switch (feed) {
@@ -13,4 +13,10 @@ export function feedRequiresLongerPersistence(feed: Feed): boolean {
         default:
             return false;
     }
+}
+
+export function generateQueryParamForFeedPath(
+    path: string,
+): string | undefined {
+    return feedPath[path]?.join(',');
 }
