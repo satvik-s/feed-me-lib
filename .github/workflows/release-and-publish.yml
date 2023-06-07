@@ -35,6 +35,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           RELEASE_TAG: ${{ steps.get-release-tag.outputs.release-tag }}
+    outputs:
+      version: ${{ steps.get-release-tag.outputs.release-tag }}
 
   publish-github-package:
     needs: create-github-release
@@ -57,8 +59,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-  lambda-backend-pull-request:
-    needs: publish-github-package
+  backend-pull-request:
+    needs: [create-github-release, publish-github-package]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -83,10 +85,10 @@ jobs:
           gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
-          VERSION: ${{ jobs.create-github-release.steps.get-release-tag.outputs.release-tag }}
+          VERSION: ${{ needs.create-github-release.outputs.version }}
 
-  lambda-frontend-pull-request:
-    needs: publish-github-package
+  frontend-pull-request:
+    needs: [create-github-release, publish-github-package]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -108,4 +110,4 @@ jobs:
           gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
-          VERSION: ${{ jobs.create-github-release.steps.get-release-tag.outputs.release-tag }}
+          VERSION: ${{ needs.create-github-release.outputs.version }}
