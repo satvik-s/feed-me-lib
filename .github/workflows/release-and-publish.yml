@@ -9,18 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
       - run: npm ci
       - run: npm run build
 
-  create-gh-release:
+  create-github-release:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -36,11 +36,11 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           RELEASE_TAG: ${{ steps.get-release-tag.outputs.release-tag }}
 
-  publish-gpr:
-    needs: create-gh-release
+  publish-github-package:
+    needs: create-github-release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -56,3 +56,56 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  lambda-backend-pull-request:
+    needs: publish-github-package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: satvik-s/feed-me-lambda
+          token: ${{ secrets.REPO_PACKAGE_PAT }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Create commits
+        run: |
+          git config user.name 'Satvik'
+          git config user.email 'satvik-s@users.noreply.github.com'
+          git checkout -b sshukla/feed-me-lib-version-bump
+          cd src/lambdas/refresh-lambda
+          npm i @satvik-s/feed-me-lib@latest
+          cd ../retrieve-lambda
+          npm i @satvik-s/feed-me-lib@latest
+          git add -A
+          git commit -m "update feed-me-lib"
+          git push -u origin HEAD
+          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
+          VERSION: ${{ jobs.create-github-release.steps.get-release-tag.outputs.release-tag }}
+
+  lambda-frontend-pull-request:
+    needs: publish-github-package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: satvik-s/feed-me-ui
+          token: ${{ secrets.REPO_PACKAGE_PAT }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Create commits
+        run: |
+          git config user.name 'Satvik'
+          git config user.email 'satvik-s@users.noreply.github.com'
+          git checkout -b sshukla/feed-me-lib-version-bump
+          npm i @satvik-s/feed-me-lib@latest
+          git add -A
+          git commit -m "update feed-me-lib"
+          git push -u origin HEAD
+          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
+          VERSION: ${{ jobs.create-github-release.steps.get-release-tag.outputs.release-tag }}
