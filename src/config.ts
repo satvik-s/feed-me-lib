@@ -29,7 +29,7 @@ export enum Feed {
     VOX = 'vox-general',
 }
 
-export const FeedName: Record<Feed, string> = {
+export const feedName: Record<Feed, string> = {
     [Feed['99_PERCENT_INVISIBLE']]: '99% Invisible',
     [Feed.AEON]: 'aeon',
     [Feed.ATLAS_OBSCURA]: 'Atlas Obscura',
@@ -60,7 +60,37 @@ export const FeedName: Record<Feed, string> = {
     [Feed.VOX]: 'Vox',
 };
 
-export const FeedURL: Record<Feed, string> = {
+export const feedPath: Record<string, Feed[]> = {
+    home: [Feed.BBC_WORLD, Feed.GUARDIAN_WORLD, Feed.NEW_YORK_TIMES_WORLD],
+    long: [
+        Feed.AEON,
+        Feed.DAMN_INTERESTING,
+        Feed.GUARDIAN_THE_LONG_READ,
+        Feed.LONGREADS,
+        Feed.NAUTILUS,
+        Feed.QUILLETTE,
+    ],
+    ricky: [Feed.EL_PAIS_TOP_STORIES],
+    sat: [
+        Feed.BBC_WORLD,
+        Feed.CNN_WORLD,
+        Feed.FIVE_THIRTY_EIGHT,
+        Feed.GUARDIAN_WORLD,
+        Feed.NEW_YORK_TIMES_WORLD,
+        Feed.NATIONAL_REVIEW_THE_CORNER,
+        Feed.VOLOKH_CONSPIRACY,
+        Feed.VOX,
+    ],
+    sport: [
+        Feed.REDDIT_FORMULA1_HOT,
+        Feed.REDDIT_NBA_HOT,
+        Feed.REDDIT_NFL_HOT,
+        Feed.REDDIT_TENNIS_HOT,
+        Feed.REDDIT_SOCCER_HOT,
+    ],
+};
+
+export const feedURL: Record<Feed, string> = {
     [Feed['99_PERCENT_INVISIBLE']]: 'http://feeds.feedburner.com/99pi',
     [Feed.AEON]: 'https://aeon.co/feed.rss',
     [Feed.ATLAS_OBSCURA]: 'https://www.atlasobscura.com/feeds/latest',
