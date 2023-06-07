@@ -82,7 +82,7 @@ jobs:
           git add -A
           git commit -m "update feed-me-lib"
           git push -u origin HEAD
-          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
+          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main --assignee satvik-s
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
           VERSION: ${{ needs.create-github-release.outputs.version }}
@@ -107,7 +107,7 @@ jobs:
           git add -A
           git commit -m "update feed-me-lib"
           git push -u origin HEAD
-          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main
+          gh pr create --title "chore: update feed-me-lib to $VERSION" --body "update feed-me-lib to $VERSION" --base main --assignee satvik-s
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PACKAGE_PAT }}
           VERSION: ${{ needs.create-github-release.outputs.version }}
