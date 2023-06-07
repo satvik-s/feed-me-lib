@@ -5,6 +5,7 @@ export function feedRequiresLongerPersistence(feed: Feed): boolean {
         case Feed['99_PERCENT_INVISIBLE']:
         case Feed.AEON:
         case Feed.DAMN_INTERESTING:
+        case Feed.GUARDIAN_THE_LONG_READ:
         case Feed.LONGREADS:
         case Feed.NAUTILUS:
         case Feed.QUILLETTE:
