@@ -13,3 +13,23 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+
+  lambda-backend-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          name: satvik-s/feed-me-lambda
+          token: ${{ secrets.REPO_WRITE_PAT }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Create commits
+        run: |
+          git config user.name 'Satvik'
+          git config user.email 'satvik@users.noreply.github.com'
+          npm i
+          git add -A
+          git commit -m "re-install deps"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
