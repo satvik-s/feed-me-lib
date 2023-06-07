@@ -28,9 +28,10 @@ jobs:
         run: |
           git config user.name 'Satvik'
           git config user.email 'satvik@users.noreply.github.com'
+          git checkout -b test-branch
           npm i
           touch test.txt
           git add -A
           git commit -m "re-install deps"
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+          git push -u origin HEAD
+          gh pr create --title "version bump" --body "N/A" --base main --draft
