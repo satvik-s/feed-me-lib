@@ -117,7 +117,8 @@ export const feedURL: Record<Feed, string> = {
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
-    [Feed.JAPAN_TIMES_WORLD]: 'https://www.japantimes.co.jp/news_category/world/feed/',
+    [Feed.JAPAN_TIMES_WORLD]:
+        'https://www.japantimes.co.jp/news_category/world/feed/',
     [Feed.LONGREADS]: 'https://longreads.com/feed/',
     [Feed.NATIONAL_REVIEW_THE_CORNER]:
         'https://www.nationalreview.com/corner/feed/',
