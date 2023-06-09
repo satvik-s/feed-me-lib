@@ -1,6 +1,7 @@
 export enum Feed {
     '99_PERCENT_INVISIBLE' = '99_percent_invisible-general',
     AEON = 'aeon-general',
+    AL_JAZEERA_ALL = 'al_jazeera-all',
     ATLAS_OBSCURA = 'atlas_obscura-general',
     BBC_TOP_STORIES = 'bbc-top_stories',
     BBC_WORLD = 'bbc-world',
@@ -9,9 +10,11 @@ export enum Feed {
     DAMN_INTERESTING = 'damn_interesting-general',
     EL_PAIS_TOP_STORIES = 'el_pais-top_stories',
     FIVE_THIRTY_EIGHT = 'five_thirty_eight-general',
+    FRANCE_24_WORLD = 'france_24-world',
     GUARDIAN_THE_LONG_READ = 'guardian-the_long_read',
     GUARDIAN_TOP_STORIES = 'guardian-top_stories',
     GUARDIAN_WORLD = 'guardian-world',
+    JAPAN_TIMES_WORLD = 'japan_times-world',
     LONGREADS = 'longreads-general',
     NATIONAL_REVIEW_THE_CORNER = 'national_review-the_corner',
     NAUTILUS = 'nautilus-general',
@@ -25,6 +28,7 @@ export enum Feed {
     REDDIT_NFL_HOT = 'reddit_nfl-hot',
     REDDIT_SOCCER_HOT = 'reddit_soccer-hot',
     REDDIT_TENNIS_HOT = 'reddit_tennis-hot',
+    SYDNEY_MORNING_HERALD_WORLD = 'sydney_morning_herald-world',
     VOLOKH_CONSPIRACY = 'volokh-general',
     VOX = 'vox-general',
 }
@@ -32,6 +36,7 @@ export enum Feed {
 export const feedName: Record<Feed, string> = {
     [Feed['99_PERCENT_INVISIBLE']]: '99% Invisible',
     [Feed.AEON]: 'aeon',
+    [Feed.AL_JAZEERA_ALL]: 'Al Jazeera',
     [Feed.ATLAS_OBSCURA]: 'Atlas Obscura',
     [Feed.BBC_TOP_STORIES]: 'BBC',
     [Feed.BBC_WORLD]: 'BBC',
@@ -40,9 +45,11 @@ export const feedName: Record<Feed, string> = {
     [Feed.DAMN_INTERESTING]: 'Damn Interesting',
     [Feed.EL_PAIS_TOP_STORIES]: 'El País',
     [Feed.FIVE_THIRTY_EIGHT]: 'FiveThirtyEight',
+    [Feed.FRANCE_24_WORLD]: 'France 24',
     [Feed.GUARDIAN_THE_LONG_READ]: 'the Guardian',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
     [Feed.GUARDIAN_WORLD]: 'the Guardian',
+    [Feed.JAPAN_TIMES_WORLD]: 'the Japan Times',
     [Feed.LONGREADS]: 'Longreads',
     [Feed.NATIONAL_REVIEW_THE_CORNER]: 'National Review',
     [Feed.NAUTILUS]: 'Nautilus',
@@ -56,6 +63,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.REDDIT_NFL_HOT]: 'r/NFL',
     [Feed.REDDIT_SOCCER_HOT]: 'r/soccer',
     [Feed.REDDIT_TENNIS_HOT]: 'r/tennis',
+    [Feed.SYDNEY_MORNING_HERALD_WORLD]: 'the Sydney Morning Herald',
     [Feed.VOLOKH_CONSPIRACY]: 'Volokh Conspiracy',
     [Feed.VOX]: 'Vox',
 };
@@ -72,9 +80,13 @@ export const feedPath: Record<string, Feed[]> = {
     ],
     ricky: [Feed.EL_PAIS_TOP_STORIES],
     sat: [
+        Feed.AL_JAZEERA_ALL,
         Feed.BBC_WORLD,
         Feed.FIVE_THIRTY_EIGHT,
+        Feed.FRANCE_24_WORLD,
+        Feed.JAPAN_TIMES_WORLD,
         Feed.NEW_YORK_TIMES_WORLD,
+        Feed.SYDNEY_MORNING_HERALD_WORLD,
         Feed.VOLOKH_CONSPIRACY,
     ],
     sport: [
@@ -89,6 +101,7 @@ export const feedPath: Record<string, Feed[]> = {
 export const feedURL: Record<Feed, string> = {
     [Feed['99_PERCENT_INVISIBLE']]: 'http://feeds.feedburner.com/99pi',
     [Feed.AEON]: 'https://aeon.co/feed.rss',
+    [Feed.AL_JAZEERA_ALL]: 'https://www.aljazeera.com/xml/rss/all.xml',
     [Feed.ATLAS_OBSCURA]: 'https://www.atlasobscura.com/feeds/latest',
     [Feed.BBC_TOP_STORIES]: 'https://feeds.bbci.co.uk/news/rss.xml',
     [Feed.BBC_WORLD]: 'https://feeds.bbci.co.uk/news/world/rss.xml',
@@ -97,12 +110,15 @@ export const feedURL: Record<Feed, string> = {
     [Feed.EL_PAIS_TOP_STORIES]:
         'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada',
     [Feed.FIVE_THIRTY_EIGHT]: 'https://fivethirtyeight.com/features/feed/',
+    [Feed.FRANCE_24_WORLD]: 'https://www.france24.com/en/rss',
     [Feed.DAMN_INTERESTING]: 'https://feeds.feedburner.com/damninteresting/all',
     [Feed.GUARDIAN_THE_LONG_READ]:
         'https://www.theguardian.com/news/series/the-long-read/rss',
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
+    [Feed.JAPAN_TIMES_WORLD]:
+        'https://www.japantimes.co.jp/news_category/world/feed/',
     [Feed.LONGREADS]: 'https://longreads.com/feed/',
     [Feed.NATIONAL_REVIEW_THE_CORNER]:
         'https://www.nationalreview.com/corner/feed/',
@@ -122,6 +138,7 @@ export const feedURL: Record<Feed, string> = {
         'https://www.reddit.com/r/soccer/hot.json?limit=10',
     [Feed.REDDIT_TENNIS_HOT]:
         'https://www.reddit.com/r/tennis/hot.json?limit=5',
+    [Feed.SYDNEY_MORNING_HERALD_WORLD]: 'https://www.smh.com.au/rss/world.xml',
     [Feed.VOLOKH_CONSPIRACY]: 'https://reason.com/volokh/feed/',
     [Feed.VOX]: 'https://www.vox.com/rss/index.xml',
 };
