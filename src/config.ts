@@ -73,13 +73,9 @@ export const feedPath: Record<string, Feed[]> = {
     ricky: [Feed.EL_PAIS_TOP_STORIES],
     sat: [
         Feed.BBC_WORLD,
-        Feed.CNN_WORLD,
         Feed.FIVE_THIRTY_EIGHT,
-        Feed.GUARDIAN_WORLD,
         Feed.NEW_YORK_TIMES_WORLD,
-        Feed.NATIONAL_REVIEW_THE_CORNER,
         Feed.VOLOKH_CONSPIRACY,
-        Feed.VOX,
     ],
     sport: [
         Feed.REDDIT_FORMULA1_HOT,
