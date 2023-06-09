@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: PR Title Verify
-        uses: satvik-s/pr-title-check@v1
+        uses: satvik-s/pr-title-check@1.2.0
