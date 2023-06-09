@@ -25,7 +25,7 @@ jobs:
         run: |
           git config user.name 'Satvik'
           git config user.email 'satvik-s@users.noreply.github.com'
-          git checkout -b sshukla/version-bump
+          git checkout -b sshukla/temp-version-bump
           npm version ${{ inputs.version_update_type }}
       - name: Get release tag
         id: get-release-tag
@@ -33,6 +33,7 @@ jobs:
         run: echo "release-tag=v$(jq -r .version package.json)" >> $GITHUB_OUTPUT
       - name: Push changes
         run: |
+          git checkout -b sshukla/version-bump-$VERSION
           git push -u origin HEAD
           gh pr create --title "chore: update version to $VERSION" --body "update to version $VERSION" --base main --assignee satvik-s
         env:
