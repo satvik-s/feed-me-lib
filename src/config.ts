@@ -14,6 +14,7 @@ export enum Feed {
     GUARDIAN_THE_LONG_READ = 'guardian-the_long_read',
     GUARDIAN_TOP_STORIES = 'guardian-top_stories',
     GUARDIAN_WORLD = 'guardian-world',
+    HINDU_INDIA = 'hindu-india',
     JAPAN_TIMES_WORLD = 'japan_times-world',
     LONGREADS = 'longreads-general',
     NATIONAL_REVIEW_THE_CORNER = 'national_review-the_corner',
@@ -22,6 +23,7 @@ export enum Feed {
     NEW_YORK_TIMES_WORLD = 'new_york_times-world',
     NEW_YORKER_TOP_STORIES = 'new_yorker-top_stories',
     POLITICO_TOP_STORIES = 'politico-top_stories',
+    PRINT = 'print-general',
     QUILLETTE = 'quillette-general',
     REDDIT_FORMULA1_HOT = 'reddit_formula1-hot',
     REDDIT_NBA_HOT = 'reddit_nba-hot',
@@ -31,6 +33,7 @@ export enum Feed {
     SYDNEY_MORNING_HERALD_WORLD = 'sydney_morning_herald-world',
     VOLOKH_CONSPIRACY = 'volokh-general',
     VOX = 'vox-general',
+    WIRE = 'wire-general',
 }
 
 export const feedName: Record<Feed, string> = {
@@ -49,6 +52,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.GUARDIAN_THE_LONG_READ]: 'the Guardian',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
     [Feed.GUARDIAN_WORLD]: 'the Guardian',
+    [Feed.HINDU_INDIA]: 'the Hindu',
     [Feed.JAPAN_TIMES_WORLD]: 'the Japan Times',
     [Feed.LONGREADS]: 'Longreads',
     [Feed.NATIONAL_REVIEW_THE_CORNER]: 'National Review',
@@ -57,6 +61,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.NEW_YORK_TIMES_WORLD]: 'the New York Times',
     [Feed.NEW_YORKER_TOP_STORIES]: 'the New Yorker',
     [Feed.POLITICO_TOP_STORIES]: 'Politico',
+    [Feed.PRINT]: 'the Print',
     [Feed.QUILLETTE]: 'Quillette',
     [Feed.REDDIT_FORMULA1_HOT]: 'r/Formula1',
     [Feed.REDDIT_NBA_HOT]: 'r/NBA',
@@ -66,10 +71,12 @@ export const feedName: Record<Feed, string> = {
     [Feed.SYDNEY_MORNING_HERALD_WORLD]: 'the Sydney Morning Herald',
     [Feed.VOLOKH_CONSPIRACY]: 'Volokh Conspiracy',
     [Feed.VOX]: 'Vox',
+    [Feed.WIRE]: 'the Wire',
 };
 
 export const feedPath: Record<string, Feed[]> = {
     home: [Feed.BBC_WORLD, Feed.GUARDIAN_WORLD, Feed.NEW_YORK_TIMES_WORLD],
+    india: [Feed.HINDU_INDIA, Feed.PRINT, Feed.WIRE],
     long: [
         Feed.AEON,
         Feed.DAMN_INTERESTING,
@@ -117,6 +124,8 @@ export const feedURL: Record<Feed, string> = {
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
+    [Feed.HINDU_INDIA]:
+        'https://www.thehindu.com/news/national/feeder/default.rss',
     [Feed.JAPAN_TIMES_WORLD]:
         'https://www.japantimes.co.jp/news_category/world/feed/',
     [Feed.LONGREADS]: 'https://longreads.com/feed/',
@@ -129,6 +138,7 @@ export const feedURL: Record<Feed, string> = {
         'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
     [Feed.NEW_YORKER_TOP_STORIES]: 'https://www.newyorker.com/feed/news',
     [Feed.POLITICO_TOP_STORIES]: 'https://rss.politico.com/politics-news.xml',
+    [Feed.PRINT]: 'https://theprint.in/feed/',
     [Feed.QUILLETTE]: 'https://quillette.com/articles/rss/',
     [Feed.REDDIT_NBA_HOT]: 'https://www.reddit.com/r/nba/hot.json?limit=10',
     [Feed.REDDIT_FORMULA1_HOT]:
@@ -141,4 +151,5 @@ export const feedURL: Record<Feed, string> = {
     [Feed.SYDNEY_MORNING_HERALD_WORLD]: 'https://www.smh.com.au/rss/world.xml',
     [Feed.VOLOKH_CONSPIRACY]: 'https://reason.com/volokh/feed/',
     [Feed.VOX]: 'https://www.vox.com/rss/index.xml',
+    [Feed.WIRE]: 'https://thewire.in/rss',
 };
