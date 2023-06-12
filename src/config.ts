@@ -76,7 +76,7 @@ export const feedName: Record<Feed, string> = {
 
 export const feedPath: Record<string, Feed[]> = {
     home: [Feed.BBC_WORLD, Feed.GUARDIAN_WORLD, Feed.NEW_YORK_TIMES_WORLD],
-    india: [Feed.HINDU_INDIA, Feed.PRINT, Feed.WIRE],
+    india: [Feed.HINDU_INDIA, Feed.PRINT],
     long: [
         Feed.AEON,
         Feed.DAMN_INTERESTING,
