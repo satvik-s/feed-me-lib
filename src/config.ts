@@ -14,6 +14,7 @@ export enum Feed {
     GUARDIAN_THE_LONG_READ = 'guardian-the_long_read',
     GUARDIAN_TOP_STORIES = 'guardian-top_stories',
     GUARDIAN_WORLD = 'guardian-world',
+    HACKERNEWS_BEST = 'hackernews-best',
     HINDU_INDIA = 'hindu-india',
     JAPAN_TIMES_WORLD = 'japan_times-world',
     LONGREADS = 'longreads-general',
@@ -52,6 +53,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.GUARDIAN_THE_LONG_READ]: 'the Guardian',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
     [Feed.GUARDIAN_WORLD]: 'the Guardian',
+    [Feed.HACKERNEWS_BEST]: 'Hacker News',
     [Feed.HINDU_INDIA]: 'the Hindu',
     [Feed.JAPAN_TIMES_WORLD]: 'the Japan Times',
     [Feed.LONGREADS]: 'Longreads',
@@ -75,7 +77,7 @@ export const feedName: Record<Feed, string> = {
 };
 
 export const feedPath: Record<string, Feed[]> = {
-    home: [Feed.BBC_WORLD, Feed.GUARDIAN_WORLD, Feed.NEW_YORK_TIMES_WORLD],
+    home: [Feed.BBC_WORLD, Feed.NEW_YORK_TIMES_WORLD],
     india: [Feed.HINDU_INDIA, Feed.PRINT],
     long: [
         Feed.AEON,
@@ -91,6 +93,7 @@ export const feedPath: Record<string, Feed[]> = {
         Feed.BBC_WORLD,
         Feed.FIVE_THIRTY_EIGHT,
         Feed.FRANCE_24_WORLD,
+        Feed.HACKERNEWS_BEST,
         Feed.JAPAN_TIMES_WORLD,
         Feed.NEW_YORK_TIMES_WORLD,
         Feed.SYDNEY_MORNING_HERALD_WORLD,
@@ -124,6 +127,7 @@ export const feedURL: Record<Feed, string> = {
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
+    [Feed.HACKERNEWS_BEST]: 'https://hnrss.org/best',
     [Feed.HINDU_INDIA]:
         'https://www.thehindu.com/news/national/feeder/default.rss',
     [Feed.JAPAN_TIMES_WORLD]:
