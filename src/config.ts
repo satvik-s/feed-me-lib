@@ -29,6 +29,7 @@ export enum Feed {
     REDDIT_FORMULA1_HOT = 'reddit_formula1-hot',
     REDDIT_NBA_HOT = 'reddit_nba-hot',
     REDDIT_NFL_HOT = 'reddit_nfl-hot',
+    REDDIT_PELOTON_HOT = 'reddit_peloton-hot',
     REDDIT_SOCCER_HOT = 'reddit_soccer-hot',
     REDDIT_TENNIS_HOT = 'reddit_tennis-hot',
     SYDNEY_MORNING_HERALD_WORLD = 'sydney_morning_herald-world',
@@ -68,6 +69,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.REDDIT_FORMULA1_HOT]: 'r/Formula1',
     [Feed.REDDIT_NBA_HOT]: 'r/NBA',
     [Feed.REDDIT_NFL_HOT]: 'r/NFL',
+    [Feed.REDDIT_PELOTON_HOT]: 'r/peloton',
     [Feed.REDDIT_SOCCER_HOT]: 'r/soccer',
     [Feed.REDDIT_TENNIS_HOT]: 'r/tennis',
     [Feed.SYDNEY_MORNING_HERALD_WORLD]: 'the Sydney Morning Herald',
@@ -105,6 +107,7 @@ export const feedPath: Record<string, Feed[]> = {
         Feed.REDDIT_NFL_HOT,
         Feed.REDDIT_TENNIS_HOT,
         Feed.REDDIT_SOCCER_HOT,
+        Feed.REDDIT_PELOTON_HOT,
     ],
 };
 
@@ -148,6 +151,8 @@ export const feedURL: Record<Feed, string> = {
     [Feed.REDDIT_FORMULA1_HOT]:
         'https://www.reddit.com/r/formula1/hot.json?limit=5',
     [Feed.REDDIT_NFL_HOT]: 'https://www.reddit.com/r/nfl/hot.json?limit=10',
+    [Feed.REDDIT_PELOTON_HOT]:
+        'https://www.reddit.com/r/peloton/hot.json?limit=5',
     [Feed.REDDIT_SOCCER_HOT]:
         'https://www.reddit.com/r/soccer/hot.json?limit=10',
     [Feed.REDDIT_TENNIS_HOT]:
