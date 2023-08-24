@@ -130,7 +130,7 @@ export const feedURL: Record<Feed, string> = {
     [Feed.GUARDIAN_TOP_STORIES]:
         'https://www.theguardian.com/international/rss',
     [Feed.GUARDIAN_WORLD]: 'https://www.theguardian.com/world/rss',
-    [Feed.HACKERNEWS_BEST]: 'https://hnrss.org/best',
+    [Feed.HACKERNEWS_BEST]: 'https://hnrss.org/frontpage?description=0',
     [Feed.HINDU_INDIA]:
         'https://www.thehindu.com/news/national/feeder/default.rss',
     [Feed.JAPAN_TIMES_WORLD]:
