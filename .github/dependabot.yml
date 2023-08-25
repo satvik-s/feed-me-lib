@@ -11,3 +11,15 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "@types/node"
+    groups:
+       # Specify a name for the group, which will be used in pull request titles
+       # and branch names
+       typescript-eslint:
+          patterns:
+            - "@typescript-eslint*"
+       eslint:
+          patterns:
+            - "eslint*"
+            - "prettier"
+            - "husky"
+            - "lint-staged"
