@@ -14,11 +14,9 @@ updates:
     groups:
        # Specify a name for the group, which will be used in pull request titles
        # and branch names
-       typescript-eslint:
-          patterns:
-            - "@typescript-eslint*"
        eslint:
           patterns:
+            - "@typescript-eslint*"
             - "eslint*"
             - "prettier"
             - "husky"
