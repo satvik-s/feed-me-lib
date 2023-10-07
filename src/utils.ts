@@ -15,6 +15,24 @@ export function feedRequiresLongerPersistence(feed: Feed): boolean {
     }
 }
 
+export function feedRequiresAscendingTimestampSort(feed: Feed): boolean {
+    switch (feed) {
+        case Feed.FIXTURE_CALENDAR_SAT:
+            return true;
+        default:
+            return false;
+    }
+}
+
+export function feedRequiresAbsoluteTimestamp(feed: Feed): boolean {
+    switch (feed) {
+        case Feed.FIXTURE_CALENDAR_SAT:
+            return true;
+        default:
+            return false;
+    }
+}
+
 export function generateQueryParamForFeedPath(
     path: string,
 ): string | undefined {
