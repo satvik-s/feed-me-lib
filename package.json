@@ -1,6 +1,6 @@
 {
   "name": "@satvik-s/feed-me-lib",
-  "version": "3.4.1",
+  "version": "3.5.0",
   "description": "feed me project config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

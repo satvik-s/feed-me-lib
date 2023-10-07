@@ -10,6 +10,7 @@ export enum Feed {
     DAMN_INTERESTING = 'damn_interesting-general',
     EL_PAIS_TOP_STORIES = 'el_pais-top_stories',
     FIVE_THIRTY_EIGHT = 'five_thirty_eight-general',
+    FIXTURES_CALENDAR_SAT = 'fixtures_calendar-sat',
     FRANCE_24_WORLD = 'france_24-world',
     GUARDIAN_THE_LONG_READ = 'guardian-the_long_read',
     GUARDIAN_TOP_STORIES = 'guardian-top_stories',
@@ -51,6 +52,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.DAMN_INTERESTING]: 'Damn Interesting',
     [Feed.EL_PAIS_TOP_STORIES]: 'El País',
     [Feed.FIVE_THIRTY_EIGHT]: 'FiveThirtyEight',
+    [Feed.FIXTURES_CALENDAR_SAT]: '',
     [Feed.FRANCE_24_WORLD]: 'France 24',
     [Feed.GUARDIAN_THE_LONG_READ]: 'the Guardian',
     [Feed.GUARDIAN_TOP_STORIES]: 'the Guardian',
@@ -125,6 +127,8 @@ export const feedURL: Record<Feed, string> = {
     [Feed.EL_PAIS_TOP_STORIES]:
         'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada',
     [Feed.FIVE_THIRTY_EIGHT]: 'https://fivethirtyeight.com/features/feed/',
+    [Feed.FIXTURES_CALENDAR_SAT]:
+        'https://api.fixturecalendar.com/api/v1/users/favorites/feeds?page=1&itemsPerPage=30',
     [Feed.FRANCE_24_WORLD]: 'https://www.france24.com/en/rss',
     [Feed.DAMN_INTERESTING]: 'https://feeds.feedburner.com/damninteresting/all',
     [Feed.GUARDIAN_THE_LONG_READ]:
