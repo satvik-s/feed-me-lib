@@ -129,7 +129,7 @@ export const feedURL: Record<Feed, string> = {
         'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada',
     [Feed.FIVE_THIRTY_EIGHT]: 'https://fivethirtyeight.com/features/feed/',
     [Feed.FIXTURE_CALENDAR_SAT]:
-        'https://api.fixturecalendar.com/api/v1/users/favorites/feeds?page=1&itemsPerPage=30',
+        'https://api.fixturecalendar.com/api/v1/users/favorites/feeds?page=1&itemsPerPage=50',
     [Feed.FRANCE_24_WORLD]: 'https://www.france24.com/en/rss',
     [Feed.DAMN_INTERESTING]: 'https://feeds.feedburner.com/damninteresting/all',
     [Feed.GUARDIAN_THE_LONG_READ]:
