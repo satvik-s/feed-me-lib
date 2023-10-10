@@ -21,7 +21,7 @@ export function feedPersistanceTimeMilliSeconds(feed: Feed): number {
         case Feed.QUILLETTE:
             return TEN_DAY_MILLI_SECONDS;
         default:
-            return ONE_HOUR_MILLI_SECONDS;
+            return ONE_DAY_MILLI_SECONDS;
     }
 }
 
