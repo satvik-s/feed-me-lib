@@ -1,8 +1,9 @@
 import { Feed, feedPath } from './config';
 
-const ONE_DAY_MILLI_SECONDS = 1 * 24 * 60 * 60 * 1_000;
 const ONE_HOUR_MILLI_SECONDS = 1 * 1 * 60 * 60 * 1_000;
-const TEN_DAY_MILLI_SECONDS = 10 * 24 * 60 * 60 * 1_000;
+const FOUR_HOUR_MILLI_SECONDS = 4 * ONE_HOUR_MILLI_SECONDS;
+const ONE_DAY_MILLI_SECONDS = 24 * ONE_HOUR_MILLI_SECONDS;
+const TEN_DAY_MILLI_SECONDS = 10 * ONE_DAY_MILLI_SECONDS;
 
 export function generateQueryParamForFeedPath(
     path: string,
@@ -28,7 +29,7 @@ export function feedPersistanceTimeMilliSeconds(feed: Feed): number {
 export function feedRefreshTimeMilliSeconds(feed: Feed): number {
     switch (feed) {
         case Feed.FIXTURE_CALENDAR_SAT:
-            return ONE_DAY_MILLI_SECONDS;
+            return FOUR_HOUR_MILLI_SECONDS;
         default:
             return ONE_HOUR_MILLI_SECONDS;
     }
