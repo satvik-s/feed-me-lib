@@ -69,7 +69,7 @@ export const feedName: Record<Feed, string> = {
     [Feed.NEW_YORK_TIMES_TOP_STORIES]: 'the New York Times',
     [Feed.NEW_YORK_TIMES_WORLD]: 'the New York Times',
     [Feed.NEW_YORKER_TOP_STORIES]: 'the New Yorker',
-    [Feed.NPR_TOP_STORIES: 'npr',
+    [Feed.NPR_TOP_STORIES]: 'npr',
     [Feed.NPR_WORLD]: 'npr',
     [Feed.POLITICO_TOP_STORIES]: 'Politico',
     [Feed.PRINT]: 'the Print',
