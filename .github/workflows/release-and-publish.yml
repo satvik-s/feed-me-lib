@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: satvik-s/feed-me-lambda
+          repository: satvik-s/lambda-monorepo
           token: ${{ secrets.REPO_PACKAGE_PAT }}
       - uses: actions/setup-node@v3
         with:
@@ -75,9 +75,9 @@ jobs:
           git config user.name 'Satvik'
           git config user.email 'satvik-s@users.noreply.github.com'
           git checkout -b sshukla/feed-me-lib-version-bump
-          cd src/lambdas/refresh-lambda
+          cd src/lambdas/feed-me-refresh-lambda
           npm i @satvik-s/feed-me-lib@latest
-          cd ../retrieve-lambda
+          cd ../feed-me-retrieve-lambda
           npm i @satvik-s/feed-me-lib@latest
           git add -A
           git commit -m "update feed-me-lib"
