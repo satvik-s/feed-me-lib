@@ -35,7 +35,7 @@
     "npm-check-updates": "16.14.11",
     "prettier": "3.1.0",
     "rimraf": "5.0.5",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "lint-staged": {
     "*.{js,ts,json}": "npm run prettier"
